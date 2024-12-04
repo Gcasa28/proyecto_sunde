@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import Form from "./components/LoginForm";
 import { useState } from "react";
-import "./App.css';
+import "./App.css"
 
 function App() {
 
