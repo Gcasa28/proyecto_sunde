@@ -23,13 +23,11 @@ module.exports = (sequelize) => {
         allowNull: false,
     },
     years: {
-      type:DataTypes.STRING,
-      allowNull:false
+      type:DataTypes.STRING
     },
     created: {
         type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-        allowNull: false
+        defaultValue: DataTypes.NOW
     }
   }, {timestamps:false});
 };
