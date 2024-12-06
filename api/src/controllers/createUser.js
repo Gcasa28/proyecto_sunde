@@ -12,7 +12,7 @@ const createUser = async (name, lastname, password, years) => {
     // const temperamentsToAdd = temperamentResults.map(result => result[0]);
 
     // await newDog.addTemperaments(temperamentsToAdd);
-    // return newDog
+    return newUser
     // if (temperamentId1) {
     //     const temperament1 = await Temperament.findByPk(temperamentId1);
     //     const dog1 = await Dog.findByPk(newDog.id);

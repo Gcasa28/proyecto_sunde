@@ -2,13 +2,25 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME
-} = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DIALECT } = process.env;
 
-const sequelize = new Sequelize(`${DB_USER}://${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// const sequelize = new Sequelize(`${DB_USER}://${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+//   dialect: DB_DIALECT,
+//   logging: false, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// });
+
+console.log('DB_USER:', DB_USER);
+console.log('DB_PASSWORD:', DB_PASSWORD);
+console.log('DB_HOST:', DB_HOST);
+console.log('DB_NAME:', DB_NAME);
+console.log('DB_DIALECT:', DB_DIALECT);
+
+const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+  host: DB_HOST,
+  dialect: DB_DIALECT,  // Aquí usamos la variable DB_DIALECT
+  logging: false,  // Cambiar a 'console.log' si quieres ver las consultas SQL
+  native: false,  // Si deseas usar pg-native para mejorar el rendimiento
 });
 const basename = path.basename(__filename);
 
