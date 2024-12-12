@@ -10,12 +10,6 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DIALECT } = process.env;
 //   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 // });
 
-console.log('DB_USER:', DB_USER);
-console.log('DB_PASSWORD:', DB_PASSWORD);
-console.log('DB_HOST:', DB_HOST);
-console.log('DB_NAME:', DB_NAME);
-console.log('DB_DIALECT:', DB_DIALECT);
-
 const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: DB_DIALECT,  // Aquí usamos la variable DB_DIALECT

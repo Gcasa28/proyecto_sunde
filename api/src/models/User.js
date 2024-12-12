@@ -23,7 +23,7 @@ module.exports = (sequelize) => {
         allowNull: false,
     },
     years: {
-      type:DataTypes.STRING
+      type:DataTypes.INTEGER
     },
     created: {
         type: DataTypes.DATE,
